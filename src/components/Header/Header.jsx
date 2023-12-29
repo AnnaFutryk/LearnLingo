@@ -1,20 +1,22 @@
-import { HeaderWrap, Link, List } from "./Header.styled";
+import Logo from "../../Logo/Logo";
+import SignUpBtn from "../Buttons/SignUpBtn/SignUpBtn";
+
+import LogIn from "../LogIn/LogIn";
+import Navigation from "../Navigation/Navigation";
+import { Container, HeaderWrap, LogInWrapp } from "./Header.styled";
 
 const Header = () => {
   return (
-    <HeaderWrap>
-      <List>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/teachers">Teachers</Link>
-        </li>
-        <li>
-          <Link to="/favorites">Favorites</Link>
-        </li>
-      </List>
-    </HeaderWrap>
+    <Container>
+      <HeaderWrap>
+        <Logo />
+        <Navigation />
+        <LogInWrapp>
+          <LogIn />
+          <SignUpBtn />
+        </LogInWrapp>
+      </HeaderWrap>
+    </Container>
   );
 };
 
