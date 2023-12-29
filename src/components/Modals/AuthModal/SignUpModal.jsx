@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import SignUpForm from "../../Forms/SignUpForm";
-import { ModalWindow, Overlay, SvgCloseStyled } from "./SignUpModal.styled";
+import { ModalWindow, Overlay, SvgCloseStyled } from "./Modal.styled";
 import { ReactComponent as SvgClose } from "../../../images/x.svg";
 
 const modalRoot = document.querySelector("#modal-root");

@@ -1,9 +1,9 @@
 import { ReactComponent as LogInSvg } from "../../images/log-in.svg";
 import { LogInTxt, Wrapp } from "./LogIn.styled";
 
-const LogIn = () => {
+const LogIn = ({ onClick }) => {
   return (
-    <Wrapp>
+    <Wrapp onClick={onClick}>
       <LogInSvg />
       <LogInTxt>Log in</LogInTxt>
     </Wrapp>
