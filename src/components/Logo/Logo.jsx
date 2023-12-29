@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as LogoSvg } from "../images/logo.svg";
+import { ReactComponent as LogoSvg } from "../../images/logo.svg";
 import { LogoTxt, Wrapp } from "./Logo.styled";
 
 const Logo = () => {

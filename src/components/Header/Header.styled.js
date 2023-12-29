@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 20px auto;
-  width: 1184px;
+  max-width: 1184px;
   height: 48px;
 `;
 
 export const HeaderWrap = styled.header`
-  position: fixed;
-  z-index: 10;
-  width: 1184px;
+  /* position: fixed;
+  z-index: 10; */
+  max-width: 1184px;
   height: 48px;
   display: flex;
   align-items: center;
