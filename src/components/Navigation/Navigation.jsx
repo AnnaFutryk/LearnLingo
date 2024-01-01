@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
+import { selectIsAuth } from "../../redux/auth/auth-selectors";
 import { Link, List } from "./Navigation.styled";
 
 const Navigation = () => {
+  const isAuth = useSelector(selectIsAuth);
+
   return (
     <List>
       <li>
@@ -9,9 +13,11 @@ const Navigation = () => {
       <li>
         <Link to="/teachers">Teachers</Link>
       </li>
-      <li>
-        <Link to="/favorites">Favorites</Link>
-      </li>
+      {isAuth && (
+        <li>
+          <Link to="/favorites">Favorites</Link>
+        </li>
+      )}
     </List>
   );
 };
