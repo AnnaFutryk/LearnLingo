@@ -9,9 +9,18 @@ import {
   TxtBlock,
 } from "./Hero.styled";
 import OrangeHeroImage from "../../images/hero/orange-hero.png";
+import { useEffect, useState } from "react";
+import { heroImg } from "./heroImg";
 
 const Hero = () => {
+  const [currentImg, setCurrentImg] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const imgKeys = Object.keys(heroImg);
+    const randomIndex = Math.floor(Math.random() * imgKeys.length);
+    setCurrentImg(heroImg[randomIndex]);
+  }, []);
 
   return (
     <HeroWrapper>
@@ -32,7 +41,7 @@ const Hero = () => {
         />
       </TxtBlock>
       <ImgBlock>
-        <img src={OrangeHeroImage} alt="hero" width="568" height="530" />
+        <img src={currentImg} alt="hero" width="568" height="530" />
       </ImgBlock>
     </HeroWrapper>
   );
