@@ -35,7 +35,7 @@ const SignInModal = ({ onClose }) => {
         <SvgCloseStyled onClick={onClose}>
           <SvgClose />
         </SvgCloseStyled>
-        <SignInForm />
+        <SignInForm onClose={onClose} />
       </ModalWindow>
     </Overlay>,
     modalRoot

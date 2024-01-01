@@ -16,6 +16,8 @@ import {
 import { ReactComponent as ShowPassword } from "../../images/eye.svg";
 import { ReactComponent as HidePassword } from "../../images/eye-off.svg";
 import MainBtn from "../Buttons/MainBtn/MainBtn";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../redux/auth/auth-operations";
 
 const initialValues = { name: "", email: "", password: "" };
 const schema = Yup.object().shape({
@@ -38,11 +40,32 @@ const schema = Yup.object().shape({
     .matches(/[0-9]/, "Password must contain at least one number"),
 });
 
-export default function SignUpForm() {
+export default function SignUpForm({ onClose }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (values) => {
+    const { name, email, password } = values;
+    try {
+      await dispatch(signUp({ name, email, password })).unwrap();
+      toast.success(`🦄 Your sign up was successful!`, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 1500,
+      });
+      setTimeout(() => {
+        onClose();
+      }, 1500);
+    } catch (error) {
+      toast.error(`Something went wrong. Try again`, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    }
   };
 
   return (
@@ -56,7 +79,7 @@ export default function SignUpForm() {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={() => {}}
+        onSubmit={handleSubmit}
       >
         {({ values, errors, touched }) => (
           <AuthForm>
@@ -116,7 +139,7 @@ export default function SignUpForm() {
                 </ToggleButton>
               </InputWrapper>
             </>
-            <MainBtn type="submit" text={"Sign Up"} />
+            <MainBtn type={"submit"} text={"Sign Up"} />
           </AuthForm>
         )}
       </Formik>

@@ -1,9 +1,9 @@
 import { Btn } from "./MainBtn.styled";
 
-const MainBtn = ({ text, width }) => {
+const MainBtn = ({ type, text, width }) => {
   return (
     <>
-      <Btn type="button" width={width}>
+      <Btn type={type} width={width}>
         {text}
       </Btn>
     </>
