@@ -5,7 +5,7 @@ export const List = styled.ul`
   margin-top: 24px;
   padding: 40px 123px;
   border-radius: 30px;
-  border: 1.5px dashed #9fb7ce;
+  border: 1.5px dashed #f4c550;
   max-width: 1440px;
   display: flex;
   flex-wrap: wrap;

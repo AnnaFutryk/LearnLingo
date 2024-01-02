@@ -8,25 +8,47 @@ import {
   Txt,
   TxtBlock,
 } from "./Hero.styled";
-import OrangeHeroImage from "../../images/hero/orange-hero.png";
 import { useEffect, useState } from "react";
 import { heroImg } from "./heroImg";
 
 const Hero = () => {
   const [currentImg, setCurrentImg] = useState("");
+  const [currentColor, setCurrentColor] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     const imgKeys = Object.keys(heroImg);
     const randomIndex = Math.floor(Math.random() * imgKeys.length);
+    const randomColor = imgKeys[randomIndex];
     setCurrentImg(heroImg[randomIndex]);
+    switch (randomColor) {
+      case "0":
+        setCurrentColor("#F4C550");
+        break;
+      case "1":
+        setCurrentColor("#9FB7CE");
+        break;
+      case "2":
+        setCurrentColor("#9FBAAE");
+        break;
+      case "3":
+        setCurrentColor("#E0A39A");
+        break;
+      case "4":
+        setCurrentColor("#F0AA8D");
+        break;
+
+      default:
+        break;
+    }
   }, []);
 
   return (
     <HeroWrapper>
       <TxtBlock>
         <Title>
-          Unlock your potential with the best <Span>language</Span> tutors
+          Unlock your potential with the best{" "}
+          <Span color={currentColor}>language</Span> tutors
         </Title>
         <Txt>
           Embark on an Exciting Language Journey with Expert Language Tutors:
@@ -34,6 +56,7 @@ const Hero = () => {
           highly qualified and experienced tutors.
         </Txt>
         <MainBtn
+          color={currentColor}
           type={"button"}
           text={"Get started"}
           width={"267px"}

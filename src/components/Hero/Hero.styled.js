@@ -31,6 +31,18 @@ export const Span = styled.span`
   line-height: 56px;
   letter-spacing: -0.96px;
   background-color: #fbe9ba;
+  background-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#8A8A89"};
 `;
 
 export const Txt = styled.p`

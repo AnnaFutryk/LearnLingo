@@ -4,7 +4,18 @@ export const Btn = styled.button`
   width: ${(props) => props.width || "438px"};
   height: 60px;
   color: #121417;
-  background-color: #f4c550;
+  background-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#F4C550"
+      : color === "#9FB7CE"
+      ? "#9FB7CE"
+      : color === "#9FBAAE"
+      ? "#9FBAAE"
+      : color === "#E0A39A"
+      ? "#E0A39A"
+      : color === "#F0AA8D"
+      ? "#F0AA8D"
+      : "#8A8A89"};
   display: inline-block;
   border-radius: 12px;
   border: none;
@@ -19,6 +30,17 @@ export const Btn = styled.button`
   &:focus {
     position: relative;
     top: 3px;
-    background-color: #fbe9ba;
+    background-color: ${({ color }) =>
+      color === "#F4C550"
+        ? "#FBE9BA"
+        : color === "#9FB7CE"
+        ? "#BFD6EA"
+        : color === "#9FBAAE"
+        ? "#CBDED3"
+        : color === "#E0A39A"
+        ? "#F2C0BD"
+        : color === "#F0AA8D"
+        ? "#F4C8BA"
+        : "#8A8A89"};
   }
 `;
