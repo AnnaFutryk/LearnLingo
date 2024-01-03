@@ -22,7 +22,6 @@ export const getTeachers = createAsyncThunk(
     } catch (error) {
       console.error("Error fetching teachers:", error);
       toast.error(`${error}`);
-      throw error; // Додайте цей рядок, щоб повторно викидати помилку
     }
   }
 );
