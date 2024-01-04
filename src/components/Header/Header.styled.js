@@ -7,8 +7,6 @@ export const Container = styled.div`
 `;
 
 export const HeaderWrap = styled.header`
-  /* position: fixed;
-  z-index: 10; */
   max-width: 1184px;
   height: 48px;
   display: flex;
