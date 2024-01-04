@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/532.273a5b4b.chunk.js","mappings":"mJAAA,MAIA,EAJqBA,KACZC,EAAAA,EAAAA,KAAA,KAAAC,SAAG,iB","sources":["pages/TeachersPage/TeachersPage.jsx"],"sourcesContent":["const TeachersPage = () => {\n  return <p>teachers page</p>;\n};\n\nexport default TeachersPage;\n"],"names":["TeachersPage","_jsx","children"],"sourceRoot":""}

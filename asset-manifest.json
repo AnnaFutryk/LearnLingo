@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/learn-lingo/static/css/main.3d0564e3.css",
-    "main.js": "/learn-lingo/static/js/main.491cbe3b.js",
-    "static/js/864.bf2bc025.chunk.js": "/learn-lingo/static/js/864.bf2bc025.chunk.js",
-    "static/js/532.273a5b4b.chunk.js": "/learn-lingo/static/js/532.273a5b4b.chunk.js",
+    "main.css": "/learn-lingo/static/css/main.d1e31b7b.css",
+    "main.js": "/learn-lingo/static/js/main.0e3b6ab3.js",
+    "static/js/940.5427c232.chunk.js": "/learn-lingo/static/js/940.5427c232.chunk.js",
+    "static/js/556.658b988f.chunk.js": "/learn-lingo/static/js/556.658b988f.chunk.js",
     "static/js/757.7123c188.chunk.js": "/learn-lingo/static/js/757.7123c188.chunk.js",
     "static/media/peach-hero.png": "/learn-lingo/static/media/peach-hero.a4b5554fac8fa78b540f.png",
     "static/media/pink-hero.png": "/learn-lingo/static/media/pink-hero.67faa52158bd556575fc.png",
@@ -17,14 +17,15 @@
     "static/media/eye.svg": "/learn-lingo/static/media/eye.a2a8308c34eb92b91389a9edd807473f.svg",
     "static/media/logo.svg": "/learn-lingo/static/media/logo.d34743a6d4214a7edfd037c74ed2da93.svg",
     "static/media/x.svg": "/learn-lingo/static/media/x.8a76889d732c988942d0a1a991cba2d4.svg",
-    "main.3d0564e3.css.map": "/learn-lingo/static/css/main.3d0564e3.css.map",
-    "main.491cbe3b.js.map": "/learn-lingo/static/js/main.491cbe3b.js.map",
-    "864.bf2bc025.chunk.js.map": "/learn-lingo/static/js/864.bf2bc025.chunk.js.map",
-    "532.273a5b4b.chunk.js.map": "/learn-lingo/static/js/532.273a5b4b.chunk.js.map",
+    "static/media/green-dot.svg": "/learn-lingo/static/media/green-dot.f00e07c359d2557f7d174d3800fd00f6.svg",
+    "main.d1e31b7b.css.map": "/learn-lingo/static/css/main.d1e31b7b.css.map",
+    "main.0e3b6ab3.js.map": "/learn-lingo/static/js/main.0e3b6ab3.js.map",
+    "940.5427c232.chunk.js.map": "/learn-lingo/static/js/940.5427c232.chunk.js.map",
+    "556.658b988f.chunk.js.map": "/learn-lingo/static/js/556.658b988f.chunk.js.map",
     "757.7123c188.chunk.js.map": "/learn-lingo/static/js/757.7123c188.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d0564e3.css",
-    "static/js/main.491cbe3b.js"
+    "static/css/main.d1e31b7b.css",
+    "static/js/main.0e3b6ab3.js"
   ]
 }
