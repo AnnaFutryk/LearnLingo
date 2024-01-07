@@ -15,7 +15,7 @@ export const Btn = styled.button`
       ? "#E0A39A"
       : color === "#F0AA8D"
       ? "#F0AA8D"
-      : "#8A8A89"};
+      : "#F4C550"};
   display: inline-block;
   border-radius: 12px;
   border: none;
@@ -41,6 +41,6 @@ export const Btn = styled.button`
         ? "#F2C0BD"
         : color === "#F0AA8D"
         ? "#F4C8BA"
-        : "#8A8A89"};
+        : "#F4C550"};
   }
 `;

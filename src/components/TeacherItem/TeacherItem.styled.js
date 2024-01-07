@@ -35,8 +35,10 @@ export const Avatar = styled.img`
 `;
 
 export const FirstLineWrapp = styled.div`
+  width: 968px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 32px;
 `;
 
 export const Title = styled.h3`
@@ -54,4 +56,36 @@ export const Name = styled.h2`
   font-style: normal;
   font-weight: 500;
   line-height: 1;
+`;
+
+export const InfoList = styled.ul`
+  display: flex;
+  align-items: flex-start;
+  :not(:last-child) {
+    border-right: 1px solid rgba(18, 20, 23, 0.2);
+    margin-right: 16px;
+    padding-right: 16px;
+  }
+`;
+
+export const InfoItem = styled.li`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #121417;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+`;
+
+export const Span = styled.span`
+  color: #38cd3e;
+`;
+
+export const HeartBtn = styled.button`
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  margin-left: 48px;
 `;

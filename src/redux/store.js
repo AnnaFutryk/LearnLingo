@@ -12,16 +12,19 @@ import storage from "redux-persist/lib/storage";
 import persistStore from "redux-persist/es/persistStore";
 import authSlice from "./auth/auth-slice";
 import teachersSlice from "./teachers/teachers-slice";
+import { favoriteReducer } from "./favorites/favorites-slice";
 
 const rootReducer = combineReducers({
   auth: authSlice,
   teachers: teachersSlice,
+  favorites: favoriteReducer,
 });
 
 const persistConfig = {
   key: "auth",
   storage,
   blacklist: ["teachers"],
+  whitelist: ["favorites"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
