@@ -3,14 +3,11 @@ import { ReactComponent as DotSvg } from "../../images/green-dot.svg";
 
 export const TeacherCard = styled.li`
   box-sizing: border-box;
-  width: 1184px;
   padding: 24px;
   display: flex;
-  gap: 48px;
   background-color: #fff;
   border-radius: 24px;
   margin-top: 32px;
-  margin-bottom: 32px;
 `;
 
 export const AvatarWrapper = styled.div`
@@ -19,6 +16,7 @@ export const AvatarWrapper = styled.div`
   border-radius: 100px;
   border: 3px solid #fbe9ba;
   position: relative;
+  margin-right: 48px;
 `;
 
 export const GreenSvg = styled(DotSvg)`
@@ -34,11 +32,17 @@ export const Avatar = styled.img`
   padding: 12px;
 `;
 
+export const TextContainer = styled.div`
+  display: flex;
+  width: 968px;
+  flex-direction: column;
+  gap: 32px;
+`;
+
 export const FirstLineWrapp = styled.div`
   width: 968px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 32px;
 `;
 
 export const Title = styled.h3`
@@ -88,4 +92,56 @@ export const HeartBtn = styled.button`
   background-color: transparent;
   border: none;
   margin-left: 48px;
+`;
+
+export const SecondLineWrapp = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SpeacksSpan = styled.span`
+  color: #121417;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+`;
+
+export const SecondLineSpan = styled.span`
+  color: #121417;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+`;
+
+export const ReadMoreBtn = styled.button`
+  display: inline-block;
+  margin-right: auto;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #121417;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+`;
+
+export const ExperienceTxt = styled.p`
+  color: #121417;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+`;
+
+export const BtnListWrp = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
 `;
