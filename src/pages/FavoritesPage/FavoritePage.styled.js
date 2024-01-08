@@ -12,3 +12,8 @@ export const List = styled.ul`
   align-items: center;
   justify-content: center;
 `;
+
+export const NoFoundTxt = styled.p`
+  margin-top: 40px;
+  font-size: 36px;
+`;

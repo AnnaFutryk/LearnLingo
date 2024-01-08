@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TeacherItem from "../../components/TeacherItem/TacherItem";
 import { getFavorites } from "../../redux/favorites/favorites-selector";
-import { Container, List } from "./FavoritePage.styled";
+import { Container, List, NoFoundTxt } from "./FavoritePage.styled";
 
 const FavoritePage = () => {
   const favoriteTeachers = useSelector(getFavorites);
@@ -13,7 +13,7 @@ const FavoritePage = () => {
             <TeacherItem key={index} item={item} />
           ))
         ) : (
-          <p>No teachers found matching your criteria</p>
+          <NoFoundTxt>Add the first teacher to your favorites</NoFoundTxt>
         )}
       </List>
     </Container>
