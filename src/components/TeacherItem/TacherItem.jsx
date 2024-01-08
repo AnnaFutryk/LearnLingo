@@ -6,14 +6,21 @@ import "react-toastify/dist/ReactToastify.css";
 import {
   Avatar,
   AvatarWrapper,
+  BtnListWrp,
+  ExperienceTxt,
   FirstLineWrapp,
   GreenSvg,
   HeartBtn,
   InfoItem,
   InfoList,
   Name,
+  ReadMoreBtn,
+  SecondLineSpan,
+  SecondLineWrapp,
   Span,
+  SpeacksSpan,
   TeacherCard,
+  TextContainer,
   Title,
 } from "./TeacherItem.styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,8 +30,16 @@ import {
   addFavorite,
   removeFavorite,
 } from "../../redux/favorites/favorites-slice";
+import { useState } from "react";
+import ReviewItem from "./ReviewItem/ReviewItem";
+import LevelBtn from "../Buttons/LevelBtn/LevelBtn";
+import MainBtn from "../Buttons/MainBtn/MainBtn";
+import BookLessonModal from "../Modals/BookLessonModal/BookLessonModal";
 
 const TeacherItem = ({ item }) => {
+  const [isReadMore, setIsReadMore] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const dispatch = useDispatch();
 
   const fetchedFavorites = useSelector(getFavorites);
@@ -46,6 +61,14 @@ const TeacherItem = ({ item }) => {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 2000,
     });
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   const {
@@ -70,34 +93,82 @@ const TeacherItem = ({ item }) => {
         <GreenSvg />
         <Avatar src={avatar_url} alt="avatar" />
       </AvatarWrapper>
-      <FirstLineWrapp>
-        <div>
-          <Title>Languages</Title>
-          <Name>{name}</Name>
-        </div>
+      <TextContainer>
+        <FirstLineWrapp>
+          <div>
+            <Title>Languages</Title>
+            <Name>
+              {name} {surname}
+            </Name>
+          </div>
 
-        <InfoList>
-          <InfoItem>
-            <BookSvg />
-            Lessons online
-          </InfoItem>
-          <InfoItem>Lessons done: {lessons_done}</InfoItem>
-          <InfoItem>
-            <StarSvg />
-            Rating: {rating}
-          </InfoItem>
-          <InfoItem>
-            Price / 1 hour: <Span>{price_per_hour}$</Span>
-          </InfoItem>
-          <HeartBtn onClick={handleToggleFavorite}>
-            {isLiked ? (
-              <HeartSvg fill={"#F4C550"} stroke={"#F4C550"} />
-            ) : (
-              <HeartSvg stroke={"#121417"} />
-            )}
-          </HeartBtn>
-        </InfoList>
-      </FirstLineWrapp>
+          <InfoList>
+            <InfoItem>
+              <BookSvg />
+              Lessons online
+            </InfoItem>
+            <InfoItem>Lessons done: {lessons_done}</InfoItem>
+            <InfoItem>
+              <StarSvg />
+              Rating: {rating}
+            </InfoItem>
+            <InfoItem>
+              Price / 1 hour: <Span>{price_per_hour}$</Span>
+            </InfoItem>
+            <HeartBtn type={"button"} onClick={handleToggleFavorite}>
+              {isLiked ? (
+                <HeartSvg fill={"#F4C550"} stroke={"#F4C550"} />
+              ) : (
+                <HeartSvg stroke={"#121417"} />
+              )}
+            </HeartBtn>
+          </InfoList>
+        </FirstLineWrapp>
+        <SecondLineWrapp>
+          <Title>
+            Speaks: <SpeacksSpan>{languages.join(", ")}</SpeacksSpan>
+          </Title>
+          <Title>
+            Lesson Info: <SecondLineSpan>{lesson_info}</SecondLineSpan>
+          </Title>
+          <Title>
+            Conditions: <SecondLineSpan>{conditions}</SecondLineSpan>
+          </Title>
+        </SecondLineWrapp>
+        {!isReadMore ? (
+          <ReadMoreBtn
+            onClick={() => {
+              setIsReadMore(true);
+            }}
+            type={"button"}
+          >
+            Read more
+          </ReadMoreBtn>
+        ) : (
+          <>
+            <ExperienceTxt>{experience}</ExperienceTxt>
+            {reviews.map((review, index) => (
+              <ReviewItem key={index} review={review} />
+            ))}
+          </>
+        )}
+        <BtnListWrp>
+          {levels.map((el, index) => (
+            <LevelBtn key={index} level={el} />
+          ))}
+        </BtnListWrp>
+        {isReadMore && (
+          <MainBtn
+            onClick={handleOpenModal}
+            type={"button"}
+            width={"232px"}
+            text={"Book trial lesson"}
+          />
+        )}
+      </TextContainer>
+      {isModalOpen && (
+        <BookLessonModal teacher={item} onClose={handleCloseModal} />
+      )}
     </TeacherCard>
   );
 };
