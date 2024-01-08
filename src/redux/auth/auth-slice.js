@@ -20,7 +20,6 @@ const authSlice = createSlice({
         store.loading = true;
       })
       .addCase(signUp.fulfilled, (store, { payload }) => {
-        console.log("Signup fulfilled", payload);
         const { uid, email, name } = payload;
         store.userId = uid;
         store.name = name || "";

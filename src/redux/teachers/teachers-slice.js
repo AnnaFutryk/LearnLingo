@@ -19,7 +19,6 @@ const teachersSlice = createSlice({
       .addCase(getTeachers.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.teachers = payload;
-        console.log(payload);
       })
       .addCase(getTeachers.rejected, (state, { error }) => {
         state.isLoading = false;

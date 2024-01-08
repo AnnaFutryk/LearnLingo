@@ -14,7 +14,6 @@ export const getTeachers = createAsyncThunk(
       if (snapshot.exists()) {
         const data = snapshot.val();
         const allTeachers = Object.values(data);
-        console.log("Teachers data:", allTeachers);
         return allTeachers;
       } else {
         toast.warn("Oops, no teachers available");
