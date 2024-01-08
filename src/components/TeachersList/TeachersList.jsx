@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTeachers } from "../../redux/teachers/teachers-operations";
 import { selectTeachers } from "../../redux/teachers/teachers-selectors";
 import TeacherItem from "../TeacherItem/TacherItem";
-import { List } from "./TeacherList.styled";
+import { List, NoFoundTxt } from "./TeacherList.styled";
 
 const TeachersList = () => {
   const { teachers } = useSelector(selectTeachers);
-  console.log(teachers);
 
   const dispatch = useDispatch();
 
@@ -23,7 +22,7 @@ const TeachersList = () => {
         {teachers?.length !== 0 ? (
           teachers.map((item, index) => <TeacherItem key={index} item={item} />)
         ) : (
-          <p>No teachers found matching your criteria</p>
+          <NoFoundTxt>No teachers found matching your criteria</NoFoundTxt>
         )}
       </List>
     </>
