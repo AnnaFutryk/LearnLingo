@@ -23,7 +23,7 @@ export const Btn = styled.button`
   font-weight: 700;
   line-height: 1.555;
   cursor: pointer;
-  margin-top: 22px;
+  margin-top: ${(props) => props.marginTop || "22px"};
   transition: background-color 250ms linear;
 
   &:hover,

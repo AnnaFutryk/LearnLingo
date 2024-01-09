@@ -163,6 +163,7 @@ const TeacherItem = ({ item }) => {
             type={"button"}
             width={"232px"}
             text={"Book trial lesson"}
+            marginTop={"0"}
           />
         )}
       </TextContainer>

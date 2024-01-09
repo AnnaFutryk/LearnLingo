@@ -5,6 +5,7 @@ export const List = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 96px;
 `;
 
 export const NoFoundTxt = styled.p`
