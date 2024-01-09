@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const HeroWrapper = styled.div`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TxtBlock = styled.div`
@@ -11,6 +16,11 @@ export const TxtBlock = styled.div`
   border-radius: 30px;
   background-color: #f8f8f8;
   padding: 98px 64px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 64px 32px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -21,6 +31,11 @@ export const Title = styled.h1`
   line-height: 1.166;
   letter-spacing: -0.96px;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const Span = styled.span`
@@ -43,6 +58,10 @@ export const Span = styled.span`
       : color === "#F0AA8D"
       ? "#F4C8BA"
       : "#8A8A89"};
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 export const Txt = styled.p`
@@ -54,6 +73,12 @@ export const Txt = styled.p`
   line-height: 1.375;
   letter-spacing: -0.32px;
   margin-bottom: 42px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
 `;
 
 export const ImgBlock = styled.div`
