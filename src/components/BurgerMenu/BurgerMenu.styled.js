@@ -26,7 +26,18 @@ export const StyledBurgerContent = styled.div`
   padding: 36px;
   width: 100%;
   height: 100%;
-  background: #fbe9ba;
+  background-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
   display: flex;
   flex-direction: column;
   align-items: center;

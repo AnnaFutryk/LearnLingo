@@ -14,6 +14,7 @@ import {
 import { ReactComponent as CheckedSvg } from "../../../images/modal/checked.svg";
 import { ReactComponent as UncheckedSvg } from "../../../images/modal/unchecked.svg";
 import { ErrorText } from "../Forms.styled";
+import { useColor } from "../../Hero/ColorContext";
 
 const initialValues = { picked: "", fullName: "", email: "", phoneNumber: "" };
 const schema = Yup.object().shape({
@@ -47,6 +48,7 @@ const schema = Yup.object().shape({
 });
 
 const BookLessonForm = ({ closeModal }) => {
+  const { currentColor } = useColor();
   return (
     <div>
       <Formik
@@ -188,7 +190,12 @@ const BookLessonForm = ({ closeModal }) => {
               </InputWrapper>
             </InputContainer>
 
-            <SubmitButtonStyled type="submit">Book</SubmitButtonStyled>
+            <SubmitButtonStyled
+              style={{ backgroundColor: currentColor }}
+              type="submit"
+            >
+              Book
+            </SubmitButtonStyled>
           </FormStyled>
         )}
       </Formik>

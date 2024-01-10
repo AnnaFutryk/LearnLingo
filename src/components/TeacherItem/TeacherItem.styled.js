@@ -29,6 +29,18 @@ export const AvatarWrapper = styled.div`
   height: 120px;
   border-radius: 100px;
   border: 3px solid #fbe9ba;
+  border-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
   position: relative;
   margin-right: 48px;
 `;

@@ -14,6 +14,7 @@ import { ReactComponent as CloseSvg } from "../../images/x.svg";
 import SignInModal from "../Modals/AuthModal/SignInModal";
 import SignUpBtn from "../Buttons/SignUpBtn/SignUpBtn";
 import SignUpModal from "../Modals/AuthModal/SignUpModal";
+import { useColor } from "../Hero/ColorContext";
 
 export const BurgerMenu = ({ isBrgOpen, setIsBrgOpen }) => {
   const [isSignInOpen, setSignInOpen] = useState(false);
@@ -21,6 +22,7 @@ export const BurgerMenu = ({ isBrgOpen, setIsBrgOpen }) => {
 
   const isAuth = useSelector(selectIsAuth);
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const { currentColor } = useColor();
 
   const handleSignInOpen = () => setSignInOpen(true);
   const handleSignInClose = () => setSignInOpen(false);
@@ -37,7 +39,10 @@ export const BurgerMenu = ({ isBrgOpen, setIsBrgOpen }) => {
       className={isBrgOpen ? "active" : ""}
       onClick={() => setIsBrgOpen(false)}
     >
-      <StyledBurgerContent onClick={(e) => e.stopPropagation()}>
+      <StyledBurgerContent
+        style={{ backgroundColor: currentColor }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {isMobile && !isAuth && <LogIn onClick={handleSignInOpen} />}
         {isSignInOpen && <SignInModal onClose={handleSignInClose} />}
         {isMobile && !isAuth && <SignUpBtn onClick={handleSignUpOpen} />}
@@ -60,7 +65,7 @@ export const BurgerMenu = ({ isBrgOpen, setIsBrgOpen }) => {
         </StyledBurgerList>
       </StyledBurgerContent>
       <StyledBurgerBtn type="button" onClick={() => setIsBrgOpen(false)}>
-        <CloseSvg />
+        <CloseSvg style={{ fill: currentColor }} />
       </StyledBurgerBtn>
     </StyledBurgerBox>
   );

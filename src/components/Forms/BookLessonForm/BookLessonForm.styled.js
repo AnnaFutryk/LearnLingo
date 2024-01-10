@@ -73,7 +73,18 @@ export const SubmitButtonStyled = styled.button`
   align-items: center;
   border-radius: 12px;
   border-color: transparent;
-  background-color: #f4c550;
+  background-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
   color: #121417;
   font-size: 18px;
   font-weight: 700;

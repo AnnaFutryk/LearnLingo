@@ -35,6 +35,7 @@ import ReviewItem from "./ReviewItem/ReviewItem";
 import LevelBtn from "../Buttons/LevelBtn/LevelBtn";
 import MainBtn from "../Buttons/MainBtn/MainBtn";
 import BookLessonModal from "../Modals/BookLessonModal/BookLessonModal";
+import { useColor } from "../Hero/ColorContext";
 
 const TeacherItem = ({ item }) => {
   const [isReadMore, setIsReadMore] = useState(false);
@@ -44,6 +45,7 @@ const TeacherItem = ({ item }) => {
 
   const fetchedFavorites = useSelector(getFavorites);
   const isAuth = useSelector(selectIsAuth);
+  const { currentColor } = useColor();
 
   const isLiked = fetchedFavorites.some(
     (teacher) => teacher.avatar_url === item.avatar_url
@@ -89,7 +91,7 @@ const TeacherItem = ({ item }) => {
   return (
     <TeacherCard>
       <ToastContainer transition={Slide} />
-      <AvatarWrapper>
+      <AvatarWrapper style={{ borderColor: currentColor }}>
         <GreenSvg />
         <Avatar src={avatar_url} alt="avatar" />
       </AvatarWrapper>

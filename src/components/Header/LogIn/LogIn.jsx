@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ReactComponent as LogInSvg } from "../../../images/log-in.svg";
-import { ReactComponent as LogOutSvg } from "../../../images/log-out.svg";
 import { logOut } from "../../../redux/auth/auth-operations";
 import { selectIsAuth } from "../../../redux/auth/auth-selectors";
-import { LogInTxt, Wrapp } from "./LogIn.styled";
+import { useColor } from "../../Hero/ColorContext";
+import { LogInTxt, SvgLogIn, SvgLogOut, Wrapp } from "./LogIn.styled";
 
 const LogIn = ({ onClick }) => {
   const isAuth = useSelector(selectIsAuth);
+  const { currentColor } = useColor();
 
   const dispatch = useDispatch();
 
@@ -18,12 +18,12 @@ const LogIn = ({ onClick }) => {
     <>
       {isAuth ? (
         <Wrapp onClick={handleLogOut}>
-          <LogOutSvg />
+          <SvgLogOut style={{ fill: currentColor, stroke: currentColor }} />
           <LogInTxt>Log out</LogInTxt>
         </Wrapp>
       ) : (
         <Wrapp onClick={onClick}>
-          <LogInSvg />
+          <SvgLogIn style={{ fill: currentColor, stroke: currentColor }} />
           <LogInTxt>Log in</LogInTxt>
         </Wrapp>
       )}

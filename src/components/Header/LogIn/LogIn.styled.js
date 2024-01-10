@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ReactComponent as LogInSvg } from "../../../images/log-in.svg";
+import { ReactComponent as LogOutSvg } from "../../../images/log-out.svg";
 
 export const Wrapp = styled.div`
   display: flex;
@@ -21,4 +23,58 @@ export const LogInTxt = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
+`;
+
+export const SvgLogIn = styled(LogInSvg)`
+  fill: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
+  stroke: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
+`;
+
+export const SvgLogOut = styled(LogOutSvg)`
+  fill: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
+  stroke: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
 `;

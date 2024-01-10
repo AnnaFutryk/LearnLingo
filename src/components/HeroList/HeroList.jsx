@@ -1,8 +1,11 @@
+import { useColor } from "../Hero/ColorContext";
 import { Discr, Item, List, Quantity } from "./HeroList.styled";
 
 const HeroList = () => {
+  const { currentColor } = useColor();
+
   return (
-    <List>
+    <List style={{ borderColor: currentColor }}>
       <Item>
         <Quantity>32,000 +</Quantity>
         <Discr>Experienced tutors</Discr>

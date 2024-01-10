@@ -6,6 +6,18 @@ export const List = styled.ul`
   padding: 40px 123px;
   border-radius: 30px;
   border: 1.5px dashed #f4c550;
+  border-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
   max-width: 1440px;
   display: flex;
   flex-wrap: wrap;

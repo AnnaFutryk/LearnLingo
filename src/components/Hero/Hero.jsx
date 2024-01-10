@@ -11,10 +11,12 @@ import {
 } from "./Hero.styled";
 import { useEffect, useState } from "react";
 import { heroImg } from "./heroImg";
+import { useColor } from "./ColorContext";
 
 const Hero = () => {
   const [currentImg, setCurrentImg] = useState("");
-  const [currentColor, setCurrentColor] = useState("");
+  const { currentColor, setNewColor } = useColor();
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,25 +26,25 @@ const Hero = () => {
     setCurrentImg(heroImg[randomIndex]);
     switch (randomColor) {
       case "0":
-        setCurrentColor("#F4C550");
+        setNewColor("#F4C550");
         break;
       case "1":
-        setCurrentColor("#9FB7CE");
+        setNewColor("#9FB7CE");
         break;
       case "2":
-        setCurrentColor("#9FBAAE");
+        setNewColor("#9FBAAE");
         break;
       case "3":
-        setCurrentColor("#E0A39A");
+        setNewColor("#E0A39A");
         break;
       case "4":
-        setCurrentColor("#F0AA8D");
+        setNewColor("#F0AA8D");
         break;
 
       default:
         break;
     }
-  }, []);
+  }, [setNewColor]);
 
   return (
     <HeroWrapper>
