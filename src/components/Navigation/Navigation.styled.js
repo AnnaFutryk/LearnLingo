@@ -2,8 +2,12 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const List = styled.ul`
-  display: flex;
-  gap: 28px;
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: flex;
+    gap: 28px;
+  }
 `;
 
 export const Link = styled(NavLink)`
