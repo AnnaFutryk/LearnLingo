@@ -2,12 +2,26 @@ import styled from "styled-components";
 import { ReactComponent as DotSvg } from "../../images/green-dot.svg";
 
 export const TeacherCard = styled.li`
+  position: relative;
   box-sizing: border-box;
   padding: 24px;
   display: flex;
   background-color: #fff;
   border-radius: 24px;
   margin-top: 32px;
+
+  @media (max-width: 1224px) {
+    padding: 12px;
+  }
+
+  @media (max-width: 1024px) {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const AvatarWrapper = styled.div`
@@ -37,12 +51,23 @@ export const TextContainer = styled.div`
   width: 968px;
   flex-direction: column;
   gap: 32px;
+  @media (max-width: 1224px) {
+    width: 800px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 export const FirstLineWrapp = styled.div`
-  width: 968px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1224px) {
+    flex-direction: column;
+    gap: 8px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -64,16 +89,22 @@ export const Name = styled.h2`
 
 export const InfoList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
+  margin-right: 90px;
   :not(:last-child) {
     border-right: 1px solid rgba(18, 20, 23, 0.2);
     margin-right: 16px;
     padding-right: 16px;
   }
+  @media (max-width: 1224px) {
+    margin-right: 0;
+  }
 `;
 
 export const InfoItem = styled.li`
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   color: #121417;
@@ -81,17 +112,22 @@ export const InfoItem = styled.li`
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
+  white-space: nowrap;
+  height: 24px;
 `;
 
 export const Span = styled.span`
   color: #38cd3e;
+  white-space: nowrap;
 `;
 
 export const HeartBtn = styled.button`
+  position: absolute;
+  top: 26px;
+  right: 26px;
   display: inline-block;
   background-color: transparent;
   border: none;
-  margin-left: 48px;
 `;
 
 export const SecondLineWrapp = styled.div`
@@ -141,6 +177,7 @@ export const ExperienceTxt = styled.p`
 
 export const BtnListWrp = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   justify-content: flex-start;

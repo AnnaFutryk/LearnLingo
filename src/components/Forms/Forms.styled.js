@@ -7,6 +7,10 @@ export const Container = styled.div`
   flex-direction: column;
   width: 438px;
   margin: 64px;
+  @media (max-width: 768px) {
+    width: 270px;
+    margin: 20px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -33,6 +37,9 @@ export const AuthForm = styled(Form)`
   flex-direction: column;
   gap: 18px;
   max-width: 438px;
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 export const Input = styled(Field)`
@@ -63,6 +70,10 @@ export const Input = styled(Field)`
     css`
       border: 1px solid green;
     `}
+     @media (max-width: 768px) {
+    width: 240px;
+    padding: 12px;
+  }
 `;
 
 export const InputWrapper = styled.div`

@@ -43,4 +43,7 @@ export const Btn = styled.button`
         ? "#F4C8BA"
         : "#F4C550"};
   }
+  @media (max-width: 768px) {
+    width: 180px;
+  }
 `;

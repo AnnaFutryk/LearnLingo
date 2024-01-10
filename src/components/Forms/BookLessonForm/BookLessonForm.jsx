@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { ErrorMessage, Formik } from "formik";
 import * as Yup from "yup";
 import {
   FormStyled,
@@ -14,8 +14,9 @@ import {
 } from "./BookLessonForm.styled";
 import { ReactComponent as CheckedSvg } from "../../../images/modal/checked.svg";
 import { ReactComponent as UncheckedSvg } from "../../../images/modal/unchecked.svg";
+import { ErrorText } from "../Forms.styled";
 
-const initialValues = { name: "", email: "", password: "" };
+const initialValues = { picked: "", fullName: "", email: "", phoneNumber: "" };
 const schema = Yup.object().shape({
   picked: Yup.string()
     .oneOf(
@@ -143,6 +144,10 @@ const BookLessonForm = ({ closeModal }) => {
                 {errors.picked && (
                   <StyledError className="error">{errors.picked}</StyledError>
                 )}
+                <ErrorMessage
+                  name="picked"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
               </RadioBtnContainer>
             </div>
             <InputContainer>
@@ -164,6 +169,10 @@ const BookLessonForm = ({ closeModal }) => {
                 {touched.fullName && errors.fullName && (
                   <StyledError className="error">{errors.fullName}</StyledError>
                 )}
+                <ErrorMessage
+                  name="fullName"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
               </InputWrapper>
               <InputWrapper>
                 <InputField
@@ -183,6 +192,10 @@ const BookLessonForm = ({ closeModal }) => {
                 {touched.email && errors.email && (
                   <StyledError className="error">{errors.email}</StyledError>
                 )}
+                <ErrorMessage
+                  name="email"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
               </InputWrapper>
               <InputWrapper>
                 <InputField
@@ -204,6 +217,10 @@ const BookLessonForm = ({ closeModal }) => {
                     {errors.phoneNumber}
                   </StyledError>
                 )}
+                <ErrorMessage
+                  name="phoneNumber"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
               </InputWrapper>
             </InputContainer>
 

@@ -11,4 +11,5 @@ export const LevelButton = styled.button`
   color: #121417;
   font-weight: 500;
   line-height: 1.14;
+  cursor: auto;
 `;
