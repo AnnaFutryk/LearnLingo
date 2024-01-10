@@ -5,7 +5,6 @@ import {
   RadioBtnContainer,
   RadioBtnTitle,
   RadioLabel,
-  StyledError,
   InputField,
   RadioField,
   SubmitButtonStyled,
@@ -32,7 +31,7 @@ const schema = Yup.object().shape({
     .required("Required"),
   fullName: Yup.string()
     .required("Name is required")
-    .min(3)
+    .min(3, "Name must contain at least 3 letter")
     .matches(/[A-Za-z]+/, "Name must contain at least 3 letter")
     .matches(/^[A-Za-z\s]+$/, "Name must contain only letters and spaces"),
   email: Yup.string()
@@ -42,19 +41,16 @@ const schema = Yup.object().shape({
     )
     .email("Invalid email format, example@mail.com")
     .required("Email is required"),
-  phoneNumber: Yup.string().matches(
-    /^\+\d{1,14}$/,
-    "Phone number is not valid"
-  ),
+  phoneNumber: Yup.string()
+    .matches(/^\+\d{1,14}$/, "Phone number is not valid")
+    .required("Phone number is required"),
 });
 
 const BookLessonForm = ({ closeModal }) => {
   return (
     <div>
       <Formik
-        initialValues={{
-          initialValues,
-        }}
+        initialValues={initialValues}
         validationSchema={schema}
         onSubmit={(values, actions) => {
           console.log(values);
@@ -62,14 +58,7 @@ const BookLessonForm = ({ closeModal }) => {
           closeModal();
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleSubmit,
-          isSubmitting,
-        }) => (
+        {({ values, errors, touched, handleChange, handleSubmit }) => (
           <FormStyled onSubmit={handleSubmit}>
             <div>
               <RadioBtnTitle>
@@ -141,9 +130,6 @@ const BookLessonForm = ({ closeModal }) => {
                   />
                   Culture, travel or hobby
                 </RadioLabel>
-                {errors.picked && (
-                  <StyledError className="error">{errors.picked}</StyledError>
-                )}
                 <ErrorMessage
                   name="picked"
                   render={(message) => <ErrorText>{message}</ErrorText>}
@@ -158,17 +144,11 @@ const BookLessonForm = ({ closeModal }) => {
                   type="text"
                   value={values.fullName}
                   onChange={handleChange}
-                  className={
-                    touched.fullName && !errors.fullName
-                      ? "valid"
-                      : touched.fullName && errors.fullName
-                      ? "invalid"
-                      : ""
+                  error={errors.fullName && touched.fullName ? "true" : "false"}
+                  success={
+                    values.fullName && !errors.fullName ? "true" : "false"
                   }
                 />
-                {touched.fullName && errors.fullName && (
-                  <StyledError className="error">{errors.fullName}</StyledError>
-                )}
                 <ErrorMessage
                   name="fullName"
                   render={(message) => <ErrorText>{message}</ErrorText>}
@@ -176,22 +156,12 @@ const BookLessonForm = ({ closeModal }) => {
               </InputWrapper>
               <InputWrapper>
                 <InputField
+                  type="email"
                   name="email"
                   placeholder="Email"
-                  type="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  className={
-                    touched.email && !errors.email
-                      ? "valid"
-                      : touched.email && errors.email
-                      ? "invalid"
-                      : ""
-                  }
+                  error={errors.email && touched.email ? "true" : "false"}
+                  success={values.email && !errors.email ? "true" : "false"}
                 />
-                {touched.email && errors.email && (
-                  <StyledError className="error">{errors.email}</StyledError>
-                )}
                 <ErrorMessage
                   name="email"
                   render={(message) => <ErrorText>{message}</ErrorText>}
@@ -204,19 +174,13 @@ const BookLessonForm = ({ closeModal }) => {
                   type="phone"
                   value={values.phoneNumber}
                   onChange={handleChange}
-                  className={
-                    touched.phoneNumber && !errors.phoneNumber
-                      ? "valid"
-                      : touched.phoneNumber && errors.phoneNumber
-                      ? "invalid"
-                      : ""
+                  error={
+                    errors.phoneNumber && touched.phoneNumber ? "true" : "false"
+                  }
+                  success={
+                    values.phoneNumber && !errors.phoneNumber ? "true" : "false"
                   }
                 />
-                {touched.phoneNumber && errors.phoneNumber && (
-                  <StyledError className="error">
-                    {errors.phoneNumber}
-                  </StyledError>
-                )}
                 <ErrorMessage
                   name="phoneNumber"
                   render={(message) => <ErrorText>{message}</ErrorText>}
@@ -224,18 +188,7 @@ const BookLessonForm = ({ closeModal }) => {
               </InputWrapper>
             </InputContainer>
 
-            <SubmitButtonStyled
-              disabled={
-                isSubmitting ||
-                values.picked === "" ||
-                values.fullName === "" ||
-                values.email === "" ||
-                values.phoneNumber === ""
-              }
-              type="submit"
-            >
-              Book
-            </SubmitButtonStyled>
+            <SubmitButtonStyled type="submit">Book</SubmitButtonStyled>
           </FormStyled>
         )}
       </Formik>

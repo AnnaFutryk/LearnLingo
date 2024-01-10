@@ -65,14 +65,6 @@ export const InputField = styled(Field)`
   }
 `;
 
-export const StyledError = styled.p`
-  margin-top: 2px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #da1414;
-  margin-left: 24px;
-`;
-
 export const SubmitButtonStyled = styled.button`
   display: inline-flex;
   padding: 16px;
