@@ -57,7 +57,7 @@ const TeacherItem = ({ item }) => {
       dispatch(addFavorite(item));
       return;
     }
-    toast.error(`Авторизуйтеся, щоб мати можливість додати до обраних`, {
+    toast.error(`Authorize to be able to add to favorites.`, {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 2000,
     });
