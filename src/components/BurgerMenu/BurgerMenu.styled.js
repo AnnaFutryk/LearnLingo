@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const StyledBurgerBox = styled.div`
   position: fixed;
-  z-index: 5;
+  z-index: 100;
 
   min-width: 300px;
   width: 100%;
