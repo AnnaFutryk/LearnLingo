@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import MainBtn from "../Buttons/MainBtn/MainBtn";
 import {
   HeroWrapper,
+  Img,
   ImgBlock,
   Span,
   Title,
@@ -63,8 +64,8 @@ const Hero = () => {
           onClick={() => navigate("/teachers")}
         />
       </TxtBlock>
-      <ImgBlock>
-        <img src={currentImg} alt="hero" width="568" height="530" />
+      <ImgBlock color={currentColor}>
+        <Img src={currentImg} alt="hero" width={"568px"} />
       </ImgBlock>
     </HeroWrapper>
   );

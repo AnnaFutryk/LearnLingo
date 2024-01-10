@@ -4,7 +4,7 @@ export const HeroWrapper = styled.div`
   display: flex;
   gap: 24px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1439px) {
     flex-direction: column;
     align-items: center;
   }
@@ -17,9 +17,14 @@ export const TxtBlock = styled.div`
   background-color: #f8f8f8;
   padding: 98px 64px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1439px) {
     width: 100%;
     padding: 64px 32px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 32px 12px;
   }
 `;
 
@@ -82,6 +87,39 @@ export const Txt = styled.p`
 `;
 
 export const ImgBlock = styled.div`
-  width: 568px;
+  width: 100%;
+  min-width: 320px;
   height: 530px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 30px;
+  background-color: ${({ color }) =>
+    color === "#F4C550"
+      ? "#FBE9BA"
+      : color === "#9FB7CE"
+      ? "#BFD6EA"
+      : color === "#9FBAAE"
+      ? "#CBDED3"
+      : color === "#E0A39A"
+      ? "#F2C0BD"
+      : color === "#F0AA8D"
+      ? "#F4C8BA"
+      : "#FBE9BA"};
+  overflow: hidden;
+  z-index: 1;
+
+  @media (min-width: 1440px) {
+    align-items: flex-start;
+    width: 568px;
+    padding: 0;
+  }
+`;
+
+export const Img = styled.img`
+  @media (max-width: 1439px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;

@@ -11,6 +11,16 @@ export const List = styled.ul`
   flex-wrap: wrap;
   row-gap: 24px;
   column-gap: 100px;
+
+  @media (max-width: 1439px) {
+    padding: 28px 80px;
+    column-gap: 60px;
+    row-gap: 14px;
+  }
+  @media (max-width: 767px) {
+    padding: 16px;
+    column-gap: 20px;
+  }
 `;
 
 export const Item = styled.li`
@@ -25,6 +35,9 @@ export const Quantity = styled.p`
   font-weight: 500;
   line-height: 1.143;
   letter-spacing: -0.56px;
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 `;
 
 export const Discr = styled.p`
